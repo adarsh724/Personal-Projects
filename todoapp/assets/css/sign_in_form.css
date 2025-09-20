@@ -1,0 +1,64 @@
+/* Visually hide labels but keep accessible */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.sign-in-heading {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 3rem;
+  margin: 40px 0 30px;
+  color: #4a4a4a;
+  font-weight: 700;
+}
+
+.sign-in-form {
+  max-width: 380px;
+  margin: 0 auto 50px;
+  padding: 30px 35px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.sign-in-form input[type="email"],
+.sign-in-form input[type="password"] {
+  padding: 14px 16px;
+  font-size: 1.1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sign-in-form input[type="email"]:focus,
+.sign-in-form input[type="password"]:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+.sign-in-form button {
+  padding: 14px 16px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sign-in-form button:hover {
+  background-color: #388e3c;
+  transform: translateY(-2px);
+}

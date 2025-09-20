@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <div class="heading">
+      <h1 id="page-heading">
+        <i class="fas fa-suitcase"></i>
+        TODO LIST
+      </h1>
+    </div>
+    <%if(locals.user){%>
+    <div class="form-fill">
+      <form action="/add-task" method="post">
+        <input type="text" name="task" id="" placeholder="Add Task" />
+        <input type="date" name="date" id="" placeholder="Select date" />
+
+        <select name="category" id="" aria-placeholder="Select category">
+          <option value="" selected>Choose Category</option>
+          <option value="School">School</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+        </select>
+
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+
+    <div class="outer-div">
+      <ul>
+        <%for(let i of todo_list){%>
+        <li>
+          <div class="details">
+            <% const dateObj = new Date(i.date); const options = { weekday:
+            'long', year: 'numeric', month: 'long', day: 'numeric', timeZone:
+            'Asia/Kolkata' }; const formattedDate =
+            dateObj.toLocaleDateString('en-IN', options); %>
+            <p class="task-date">
+              <i class="fa-solid fa-calendar-days"></i>
+              <%= formattedDate %>
+            </p>
+
+            <p class="task-para">
+              <label class="custom-checkbox">
+                <input type="checkbox" id="check1" />
+                <span class="checkmark"></span>
+                Task- <%=i.task%>
+              </label>
+            </p>
+          </div>
+
+          <div class="right-buttons">
+            <div class="category-btn">
+              <button><%= i.category %></button>
+            </div>
+            <div class="delete-button">
+              <a href="/delete-task/?id=<%= i._id %>">
+                <i class="fas fa-close"></i>
+              </a>
+            </div>
+          </div>
+        </li>
+        <%}%>
+      </ul>
+    </div>
+
+    <%}else{%>
+      <h1 id="sign-out-heading">You Need to Sign in first !!</h1>
+
+    <%}%>
+
+    <script
+      src="https://kit.fontawesome.com/47192b9080.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

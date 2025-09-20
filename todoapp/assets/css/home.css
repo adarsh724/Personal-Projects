@@ -1,0 +1,209 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Wrap everything except footer in a flex column */
+
+
+
+/* === Page Heading === */
+#page-heading {
+  text-align: center;
+  font-size: 70px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-bottom: 20px;
+}
+
+/* === Form Container === */
+.form-fill {
+  display: flex;
+  justify-content: center;
+}
+
+/* === Form Styles === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  background-color: #ffffff;
+  /* background-color: lightcyan; */
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  max-width: 420px;
+  margin: 0 auto;
+  transition: box-shadow 0.3s ease;
+}
+
+form:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+form input[type="text"],
+form input[type="date"],
+form select{
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid #cfd8dc;
+  border-radius: 10px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus {
+  border-color: #64b5f6;
+  box-shadow: 0 0 5px rgba(100, 181, 246, 0.5);
+  outline: none;
+}
+
+form button {
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background-color: #388e3c;
+  transform: translateY(-2px);
+}
+
+/* === Todo List === */
+.outer-div {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+    display: flex;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+li:hover {
+  transform: scale(1.02);
+}
+
+li p {
+  margin: 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.task-date{
+  margin-bottom: 5px;
+  padding: 5px;
+  font-size: smaller;
+
+}
+.right-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-end;
+  /* justify-content: center; */
+  
+}
+
+.category-btn button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: default;
+}
+
+
+
+/* checkbox */
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+  gap: 10px;
+}
+
+/* Hide default checkbox */
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+/* Style the custom checkbox */
+.custom-checkbox .checkmark {
+  width: 15px;
+  height: 15px;
+  background-color: #eee;
+  border: 2px solid #999;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* Show tick when checked */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #4caf50;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Optional: hover effect */
+.custom-checkbox:hover .checkmark {
+  background-color: #ddd;
+}
+
+#sign-out-heading {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #d9534f;          /* Bootstrap danger red for urgency */
+  background-color: #f8d7da; /* Light pinkish background for emphasis */
+  border: 1px solid #d9534f;
+  padding: 20px 30px;
+  margin: 40px auto;
+  max-width: 500px;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(217, 83, 79, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+
+
+
